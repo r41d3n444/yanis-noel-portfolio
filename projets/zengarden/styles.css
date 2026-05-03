@@ -1,0 +1,106 @@
+@font-face{ /* importation de la police d'écriture que j'ai pu télécharger */
+    font-family: 'GodOfWar';
+    src: url('GODOFWAR.TTF') format('truetype'); 
+    font-weight: normal;
+    font-style: normal;
+}
+body {
+    margin: 0;
+    padding: 0; 
+    height: 100%;
+    overflow: auto;
+    overflow-y: scroll; /* balise qui permet qu'on puisse scroller de haut en bas */
+    font-family: GodOfWar, sans-serif; /* réf à la police que j'ai importer */
+}
+.video-background{
+    position: fixed;
+    top: 0;
+    left:0;
+    height:100%;
+    width: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+.video-background video{
+    object-fit:cover;
+    position: absolute;
+    top:50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    transform: translate(-50%,-50%);
+}
+header {
+    text-align: center; 
+    padding: 2rem 1rem;
+    color: #8f96a1;
+    position: fixed; /* pour que les titres restent afficher en haut même si on descend */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* placement tout devant au niveau des plans */
+}
+
+header h1 {
+    font-size: 5rem;
+    text-transform: uppercase; /* met le texte en majuscule */
+    text-shadow: 0 0 18px #4f7fd1, 2px 2px 4px #000; /* effet ombré sur le texte */
+    animation: glowText 2s infinite alternate ease-in-out; /*effet de lumière sur le titre */
+}
+
+header h2 {
+    font-size: 3.1rem;
+    color: #8f96a1;
+    margin-top: 1rem; /* écart avec le premier titre */
+    text-shadow: 1px 1px 3px #000; 
+}
+.summary{
+    padding: 3rem 2rem;
+    background-color: rgba(26, 26, 26, 0.8); /* pour que le fond soit à moitier transparent */
+    border-radius: 12px; /* forme des coins arrondie */
+    max-width: 800px; /* maximum en largeur */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+.extra1{
+    margin-bottom: 220px; /* pour qu'il y ait un espace avec le dessous de la boîte */
+    margin-top:30px;
+    width:100%;
+    max-width: 830px;
+    height:800px;
+    overflow-y: auto; /* pour qu'on puisse faire défiler le texte du haut vers le bas dans la boîte */
+    border: 2px solid #4f7fd1;
+    padding:1rem;
+    background-color: rgba(26,26,26,0.8);
+
+}
+.extra2{
+    margin-top: 100px;
+    font-size: 30px;
+    position: relative;
+    z-index: 10; /* pour être sur que ça soit par dessus la vidéo */
+    color:#4f7fd1 ;
+    text-align: left;
+    padding:10px;
+    padding-top: 50px; 
+    line-height: 1.6;/*espacement entre chaque ligne*/
+}
+.sidebar{ /*sert en tant que footer dans cette page */
+    margin: 0px;
+    font-size: 1rem;
+    background-color: rgba(26, 26, 26, 0.8);
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+.wrapper{ /*permet de gérer e contenu de mon footer */
+    display: flex;/* permet d'aligner les paragraphes de manière horizontales*/
+    justify-content: space-around; /* pour que les colonnes soient reparties de façon équitable */
+    flex-wrap: wrap; /*retour à la ligne si l'écran est petit */
+    gap: 20px; /*pour espace entre les colonne*/
+}
+h3{
+    color: #8f96a1;
+    text-align: center;
+    text-shadow: 0 0 15px #4f7fd1, 2px 2px 4px #000;
+    animation: glowText 2s infinite alternate ease-in-out;/*petit effet de lumière sur les titres*/
+}
